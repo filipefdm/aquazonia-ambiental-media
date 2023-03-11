@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed&family=IBM+Plex+Sans:ital@0;1&family=Piazzolla:wght@300;400;600;700&display=swap");
+
+:root {
+  --font-piazzolla: "Piazzolla", sans-serif;
+  --font-ibm-plex-sans: "IBM Plex Sans", sans-serif;
+  --font-ibm-plex-sans-condensed: "IBM Plex Sans Condensed", sans-serif;
+
+  --navy-blue-color: #0a4262;
+  --emerald-green-color: #83d1bf;
+  --green-lemon-color: #d4edbc;
+  --beige-primary-color: #baaa82;
+  --beige-secondary-color: #cec5af;
+  --gray-color: #cfd0c5;
+  --light-gray-color: #e4e9dd;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
