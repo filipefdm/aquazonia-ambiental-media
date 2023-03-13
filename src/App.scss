@@ -1,0 +1,45 @@
+.app__flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-text {
+  font-size: 1rem;
+  font-family: var(--font-ibm-plex-sans);
+  color: var(--nav-text-color);
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #3085ee;
+  outline: 0;
+  font-family: var(--font-ibm-plex-sans);
+}
+
+a:hover,
+a:visited {
+  color: #0a4262;
+}
+
+p {
+  margin: 0 0 1.2rem;
+}
+
+ol,
+ul {
+  margin-left: 1.6rem;
+}
+
+ol li,
+ul li {
+  margin-top: 0.4rem;
+}
+
+h2 {
+  margin-top: 2rem;
+}

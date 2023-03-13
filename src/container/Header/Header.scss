@@ -1,0 +1,244 @@
+.app__header {
+  width: 100%;
+  height: 100vh;
+  background: var(--emerald-green-color);
+}
+
+.app__fullsize-img {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+#app__background-color {
+  background-color: #cec5af;
+}
+
+#app__background-color.app__green {
+  background-color: var(--emerald-green-color);
+}
+
+.titletext {
+  padding-left: 14%;
+  width: 100%;
+  position: relative;
+  z-index: 100;
+  min-height: 980px;
+
+  .background-img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+
+    @media (max-width: 840px) {
+      bottom: 80px;
+    }
+  }
+
+  .top-logos {
+    padding-top: 100px;
+    width: 560px;
+
+    img {
+      max-width: calc(50% - 50px);
+
+      @media (max-width: 840px) {
+        width: calc(50% - 50px);
+        max-width: 170px;
+      }
+
+      @media (max-width: 460px) {
+        width: calc(50% - 20px);
+      }
+    }
+
+    img:nth-child(2) {
+      padding-left: 50px;
+
+      @media (max-width: 460px) {
+        padding-left: 20px;
+      }
+    }
+
+    @media (max-width: 840px) {
+      width: 95%;
+      margin: auto;
+    }
+  }
+
+  h1 {
+    font-family: var(--font-piazzolla);
+    font-weight: 600;
+    font-size: 150px;
+    line-height: 150px;
+    margin: 0;
+    padding-top: 128px;
+    color: var(--navy-blue-color);
+
+    @media (max-width: 980px) {
+      font-size: 120px;
+    }
+
+    @media (max-width: 840px) {
+      font-size: 80px;
+      line-height: 90px;
+      max-width: 95%;
+      margin: auto;
+      padding-top: 90px;
+    }
+
+    @media (max-width: 460px) {
+      font-size: 60px;
+      padding-top: 80px;
+    }
+  }
+
+  h2 {
+    max-width: 620px;
+
+    font-family: var(--font-ibm-plex-sans);
+    font-size: 55px;
+    font-weight: 300;
+    color: var(--navy-blue-color);
+
+    margin-bottom: 60px;
+    letter-spacing: 7px;
+    line-height: 60px;
+
+    @media (max-width: 840px) {
+      font-size: 22px;
+      max-width: 95%;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 460px) {
+      line-height: 35px;
+    }
+  }
+
+  .byline {
+    color: var(--navy-blue-color);
+    font-family: var(--font-piazzolla);
+
+    p {
+      font-size: 20px;
+      line-height: 40px;
+      font-family: var(--font-piazzolla);
+      margin: 0;
+      color: var(--navy-blue-color);
+
+      strong {
+        font-weight: 800;
+      }
+
+      @media (max-width: 840px) {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 20px;
+      }
+    }
+
+    p:nth-child(2) {
+      display: inline;
+      width: 290px;
+
+      @media (max-width: 840px) {
+        display: block;
+        margin: auto;
+        margin-bottom: 20px;
+        padding: 0;
+      }
+    }
+
+    p:nth-child(3) {
+      @media (max-width: 840px) {
+        display: block;
+        margin: auto;
+        margin-bottom: 20px;
+        padding: 0;
+      }
+    }
+
+    .ownline {
+      @media (max-width: 840px) {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 840px) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  .langswitcher {
+    position: relative;
+    top: 0;
+    margin-left: 0 !important;
+    display: block;
+    z-index: 10000;
+
+    li {
+      display: inline-block;
+      margin-right: 0.5rem;
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    .active {
+      font-weight: 700;
+      text-decoration: underline;
+      background-color: #d4edbc;
+      padding: 4px 6px;
+    }
+
+    a.active {
+      color: #126bd9;
+    }
+  }
+
+  @media (max-width: 840px) {
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    min-height: 800px;
+  }
+}
+
+.headingtext {
+  width: 50%;
+  padding-left: 15%;
+  margin: auto;
+  font-family: "Piazzolla";
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 34px;
+  color: #0a4262;
+  padding-bottom: 50px;
+
+  @media (max-width: 840px) {
+    width: 85%;
+    padding: 0;
+    margin: auto;
+    font-size: 20px;
+  }
+}
+
+.cutout {
+  img {
+    border-style: none;
+    max-width: 100%;
+    width: 100vw;
+    position: relative;
+    top: 20px;
+  }
+}
