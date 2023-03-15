@@ -1,47 +1,62 @@
+import { useRef } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+
 import "./Navbar.scss";
-import { AiOutlineMenu } from "react-icons/ai";
-import { HiX } from "react-icons/hi";
-import { motion } from "framer-motion";
-import { useState } from "react";
+import "./MenuMobile.scss";
 
 export function Navbar() {
-  const [toggle, setToggle] = useState(false);
+  const navRef = useRef<HTMLDivElement>(null);
+
+  const showNavBar = () => {
+    if (navRef.current) {
+      navRef.current.classList.toggle("responsive-nav");
+    }
+  };
 
   return (
-    <nav className="app__navbar">
-      <ul className="app__navbar-links">
-        {["Sobre", "Metodologia"].map((item) => (
-          <li className="app__flex p-text" key={`link-${item}`}>
-            <a href={`#${item}`}>{item}</a>
-          </li>
-        ))}
-      </ul>
-
-      <div className="app__navbar-menu">
-        <AiOutlineMenu onClick={() => setToggle(true)} />
-
-        {toggle && (
-          <motion.div
-            whileInView={{ x: [300, 0] }}
-            transition={{ duration: 0.85, ease: "easeOut" }}
-          >
-            <HiX onClick={() => setToggle(false)} />
-
+    <header>
+      <nav ref={navRef} className="app__navbar">
+        <a href="#" className="links">
+          Sobre
+        </a>
+        <a href="#" className="links">
+          Metodologia
+        </a>
+        <div className="mobile-menu">
+          <span className="line-contain"></span>
+          <div className="language-switcher">
             <ul>
-              {[
-                "A intensidade das ameaças à bacia",
-                "Lacunas de dados num mundo de águas",
-              ].map((item) => (
-                <li className="p-text" key={item}>
-                  <a href={`#${item}`} onClick={() => setToggle(false)}>
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a href="" className="active">
+                  PT
+                </a>
+              </li>
+              <li>
+                <a href="">EN</a>
+              </li>
             </ul>
-          </motion.div>
-        )}
-      </div>
-    </nav>
+          </div>
+
+          <div className="menu-items">
+            <a href="#">A intensidade das ameaças à bacia</a>
+            <a href="#">Lacunas de dados num mundo de águas</a>
+            <a href="#">
+              Menos peixe na mesa: o fantasma da insegurança alimentar
+            </a>
+            <a href="#">Água: fonte de energia de baixo impacto?</a>
+          </div>
+          <button className="other-histories-button">
+            <p>outras histórias</p>
+          </button>
+        </div>
+
+        <button className="nav-btn nav-close-btn" onClick={showNavBar}>
+          <FaTimes />
+        </button>
+      </nav>
+      <button className="nav-btn" onClick={showNavBar}>
+        <FaBars />
+      </button>
+    </header>
   );
 }

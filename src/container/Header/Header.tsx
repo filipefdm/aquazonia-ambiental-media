@@ -74,7 +74,7 @@ export function Header() {
         </p>
       </div>
       <div className="cutout">
-        {/* <img src={vectorCutOut} alt="negative space decorative image" /> */}
+        <img src={vectorCutOut} alt="negative space decorative image" />
       </div>
     </section>
   );
