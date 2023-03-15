@@ -1,33 +1,25 @@
-.app__navbar {
-  width: 100%;
-  height: 3.6175rem;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 0.5rem 1.875rem;
-  background: var(--navy-blue-color);
-}
-
-.app__navbar-links {
-  flex: 1;
+header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  height: 3.875rem;
+  padding: 0 2rem;
+  background-color: var(--navy-blue-color);
 
-  list-style: none;
+  .app__navbar {
+    display: flex;
+    align-items: center;
 
-  li {
-    margin: 0 1rem;
-    cursor: pointer;
-
-    flex-direction: column;
+    @media (max-width: 840px) {
+      .links {
+        display: none;
+      }
+    }
 
     a {
-      color: var(--nav-text-color);
+      margin: 0 1rem;
+      color: #ffffff;
       text-decoration: none;
-      flex-direction: column;
 
       transition: all 0.3s ease-in-out;
 
@@ -36,98 +28,115 @@
       }
     }
   }
+}
 
-  @media screen and (max-width: 768px) {
-    flex: 0;
+.nav-btn {
+  padding: 5px 5px 0;
+  cursor: pointer;
+  background-color: var(--navy-blue-color);
+  border: none;
+  border-radius: 15%;
+  outline: none;
+  color: var(--emerald-green-color);
+  visibility: hidden;
+  opacity: 0;
+  font-size: 1.8rem;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--gray-color);
   }
 }
 
-.app__navbar-menu {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: var(--navy-blue-color);
-
-  svg {
-    width: 80%;
-    height: 80%;
-    color: var(--gray-color);
-    cursor: pointer;
-
-    transition: all 0.3s ease-in-out;
-
-    &:hover {
-      color: #a9b9c3;
-    }
+@media screen and (max-width: 768px) {
+  .nav-btn {
+    position: fixed;
+    visibility: visible;
+    opacity: 1;
+    z-index: 1001;
   }
 
-  div {
+  nav {
     position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 5;
+    top: -100vh;
+    left: 0;
 
-    padding: 1rem;
-    width: 70%;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
 
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+
     background-color: var(--navy-blue-color);
 
-    box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
+    transition: transform 1s;
 
-    svg {
-      width: 35px;
-      height: 35px;
-      color: var(--gray-color);
-      margin: 0.5rem 1rem;
-    }
+    z-index: 1002;
 
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-      flex-direction: column;
-
-      li {
-        margin: 1rem;
-
-        a {
-          color: #ffffff;
-          text-decoration: none;
-          font-size: 1rem;
-          font-family: var(--font-piazzolla);
-          font-weight: bold;
-
-          transition: all 0.3s ease-in-out;
-
-          &:hover {
-            color: var(--gray-color);
-          }
-        }
-      }
-    }
-
-    @media screen and (min-width: 768px) {
-      display: none;
+    a {
+      font-size: 1.5rem;
     }
   }
 
-  @media screen and (min-width: 768px) {
-    display: none;
+  .responsive-nav {
+    transform: translateY(100vh);
+  }
+
+  .nav-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+}
+
+.language-switcher {
+  margin-top: 34px;
+
+  li {
+    display: inline-block;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  a {
+    font-size: 0.9375rem;
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+  .active {
+    width: 50px;
+    height: 50px;
+    background-color: #d4edbc;
+    padding: 10px 15px;
+  }
+
+  a.active {
+    color: #126bd9;
+  }
+}
+
+.line-with-text {
+  display: flex;
+  align-items: center;
+  margin-right: 300px; /* ajuste de margem para separar da barra de navegação */
+}
+
+.line {
+  height: 700px;
+  width: 1px;
+  border-left: 4px solid var(--emerald-green-color);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+  a {
+    font-family: var(--font-piazzolla);
   }
 }

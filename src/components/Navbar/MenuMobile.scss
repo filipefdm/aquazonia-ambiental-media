@@ -1,0 +1,128 @@
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  // background-color: var(--navy-blue-color);
+  z-index: 999;
+
+  span {
+    float: left;
+    width: 5px;
+    margin-left: 50px;
+    margin-right: 30px;
+    margin-top: 0;
+    padding: 0;
+    display: inline;
+    background-color: #83d1bf;
+    height: 100%;
+  }
+
+  .menu-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 31px;
+    width: 30%;
+    line-height: 27px;
+    margin-bottom: 52px;
+
+    a {
+      font-size: 1.125rem;
+      font-family: var(--font-piazzolla);
+      margin-top: 30px;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      width: 40%;
+
+      a {
+        font-size: 1.25rem;
+      }
+    }
+
+    @media (max-width: 450px) {
+      width: 50%;
+
+      a {
+        font-size: 1.25rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      width: 70%;
+
+      a {
+        font-size: 1.25rem;
+      }
+    }
+
+    @media (max-width: 390px) {
+      width: 70%;
+    }
+  }
+
+  .other-histories-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--emerald-green-color);
+    width: 13.625rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 20px 30px 20px 30px;
+
+    p {
+      font-family: var(--font-ibm-plex-sans);
+      font-weight: 400;
+      font-size: 17px;
+      color: var(--navy-blue-color);
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .app__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav-btn {
+      display: block;
+    }
+
+    .nav-close-btn {
+      display: none;
+    }
+
+    .responsive-nav & {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 999;
+    }
+  }
+
+  .responsive-nav .nav-btn {
+    display: none;
+  }
+
+  .responsive-nav .nav-close-btn {
+    display: block;
+  }
+
+  .responsive-nav .mobile-menu {
+    display: block;
+  }
+}

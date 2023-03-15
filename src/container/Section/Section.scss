@@ -1,63 +1,31 @@
-img {
-  max-width: 100%;
-}
+section {
+  .text-inside {
+    width: 65%;
+    padding-left: 15%;
+    margin: 40px auto 80px auto;
+    font-size: 18px;
+    line-height: 30px;
 
-a {
-  text-decoration: none;
-  color: #3085ee;
-  outline: 0;
-  font-family: var(--font-ibm-plex-sans);
-}
+    font-family: var(--font-ibm-plex-sans);
+    font-weight: 400;
+    line-height: 2rem;
 
-a:hover,
-a:visited {
-  color: #0a4262;
-}
+    @media (max-width: 840px) {
+      width: 85%;
+      padding: 0;
+      margin: 80px auto;
+      font-size: 17px;
+      line-height: 27px;
+    }
 
-h2 {
-  margin-top: 2rem;
-}
-
-.not-visible {
-  opacity: 0;
-}
-
-.p-text {
-  font-size: 1rem;
-  font-family: var(--font-ibm-plex-sans);
-  color: var(--nav-text-color);
-}
-
-p {
-  margin: 0 0 1.2rem;
-}
-
-.text-inside {
-  width: 65%;
-  padding-left: 15%;
-  margin: 40px auto 80px auto;
-  font-size: 18px;
-  line-height: 30px;
-
-  font-family: var(--font-ibm-plex-sans);
-  font-weight: 400;
-  line-height: 2rem;
-
-  @media (max-width: 840px) {
-    width: 85%;
-    padding: 0;
-    margin: 80px auto;
-    font-size: 17px;
-    line-height: 27px;
-  }
-
-  .app__paragraph::first-letter {
-    float: left;
-    font-family: "Piazzolla";
-    font-size: 6.25rem;
-    padding-right: 0.875rem;
-    color: #0a4262;
-    padding-bottom: 40px;
+    .app__paragraph::first-letter {
+      float: left;
+      font-family: "Piazzolla";
+      font-size: 6.25rem;
+      padding-right: 0.875rem;
+      color: #0a4262;
+      padding-bottom: 40px;
+    }
   }
 }
 
@@ -172,32 +140,6 @@ p {
           margin-top: -10px;
         }
       }
-    }
-  }
-}
-
-.section-number-three {
-  .leading-text {
-    width: 70%;
-    margin-bottom: 60px;
-
-    font-family: var(--font-piazzolla);
-    font-size: 32px;
-    font-weight: normal;
-    line-height: 64px;
-    color: #0a4262;
-
-    @media (max-width: 1320px) {
-      font-size: 28px;
-    }
-
-    @media (max-width: 1160px) {
-      margin-top: -40px;
-      padding-bottom: 60px;
-    }
-
-    @media (max-width: 950px) {
-      padding-bottom: 10px;
     }
   }
 }

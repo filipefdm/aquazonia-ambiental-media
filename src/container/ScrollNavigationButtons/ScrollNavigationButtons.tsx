@@ -1,102 +1,61 @@
-import React, { useState, useEffect } from "react";
+import { Section } from "../Section/Section";
+import { Nav } from "../Nav/Nav";
+
 import "./ScrollNavigationButtons.scss";
+import { useState } from "react";
 
-interface Props {
-  sections: string[];
-}
+export function ScrollNavigationButtons() {
+  const numOfSections = 2;
 
-const ScrollNavigationButtons: React.FC<Props> = ({ sections }) => {
-  // const [activeSection, setActiveSection] = useState("");
+  const renderSections = (num: number): string[] => {
+    let arr: string[] = [];
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     let currentSection = "";
-  //     sections.forEach((section) => {
-  //       const element = document.getElementById(section);
-  //       if (element && window.pageYOffset >= element.offsetTop - 200) {
-  //         currentSection = section;
-  //       }
-  //     });
-  //     setActiveSection(currentSection);
-  //   };
+    for (let i = 1; i <= num; i++) {
+      arr.push(`section-${i}`);
+    }
 
-  //   window.addEventListener("scroll", handleScroll);
+    return arr;
+  };
 
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, [sections]);
+  const sections = renderSections(numOfSections);
 
-  // const scrollToSection = (section: string) => {
-  //   const element = document.getElementById(section);
-  //   if (element) {
-  //     const offsetTop = element.offsetTop - 100;
-  //     window.scrollTo({ top: offsetTop, behavior: "smooth" });
-  //   }
-  // };
+  const [sectionsPages, setSectionsPages] = useState([
+    {
+      id: "section-1",
+      backgroundColor: "#FFFFFF",
+      content: {
+        title: "",
+        description: "",
+      },
+    },
+    {
+      id: "section-2",
+      backgroundColor: "#FFFFFF",
+      content: {
+        title: "A intensidade das ameaças à bacia",
+        description: "A intensidade das ameaças à bacia",
+      },
+    },
+  ]);
 
   return (
-    <section id="header" className="section scrolled">
-      <section className="container grid-lg">
-        <nav className="navbar">
-          <section className="navbar-section desktop-menu">
-            <nav className="dropmenu animated">
-              <ul className="navigation">
-                <li>
-                  <a className="active" href="#a-intensidade-das-amea-as-bacia">
-                    A intensidade das ameaças à bacia
-                  </a>
-                </li>
-                <li>
-                  <a className="" href="#lacunas-de-dados-num-mundo-de-guas">
-                    Lacunas de dados num mundo de águas
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className=""
-                    href="#menos-peixe-na-mesa-o-fantasma-da-inseguran-a-alimentar"
-                  >
-                    Menos peixe na mesa: o fantasma da insegurança alimentar
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className=""
-                    href="#agua-fonte-de-energia-de-baixo-impacto"
-                  >
-                    Agua: fonte de energia de baixo impacto?
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className=""
-                    href="#ouro-o-sonho-amaz-nico-virou-pesadelo-ambiental"
-                  >
-                    Ouro: o sonho amazônico virou pesadelo ambiental
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className=""
-                    href="#zonas-inund-veis-paisagens-t-picas-da-amaz-nia"
-                  >
-                    Zonas inundáveis: paisagens típicas da Amazônia
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className=""
-                    href="#o-futuro-um-esfor-o-coordenado-pela-bacia"
-                  >
-                    O futuro: um esforço coordenado pela bacia
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </section>
-        </nav>
-      </section>
-    </section>
-  );
-};
+    <div>
+      <main>
+        <Nav sections={sections} />
 
-export default ScrollNavigationButtons;
+        <div className="app__section-container">
+          {sectionsPages.map((section) => {
+            return (
+              <Section
+                key={section.id}
+                id={section.id}
+                backgroundColor={section.backgroundColor}
+                content={section.content}
+              />
+            );
+          })}
+        </div>
+      </main>
+    </div>
+  );
+}
