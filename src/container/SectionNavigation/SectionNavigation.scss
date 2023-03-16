@@ -1,31 +1,155 @@
+// .section-navigation {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-start;
+//   gap: 1rem;
+
+//   &__button {
+//     background-color: #fff;
+//     border: 2px solid #333;
+//     padding: 0.5rem 1rem;
+//     font-size: 1rem;
+//     cursor: pointer;
+//     transition: background-color 0.3s, color 0.3s;
+
+//     &:hover,
+//     &.is-active {
+//       background-color: #333;
+//       color: #fff;
+//     }
+//   }
+
+//   &__section {
+//     border: 2px solid #333;
+//     padding: 2rem;
+//     font-size: 1.2rem;
+
+//     &:not(.is-active) {
+//       display: none;
+//     }
+//   }
+// }
+
 .section-navigation {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  display: block;
+  height: 50%;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 
-  &__button {
-    background-color: #fff;
-    border: 2px solid #333;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+  &.show {
+    opacity: 1;
+  }
 
-    &:hover,
-    &.is-active {
-      background-color: #333;
-      color: #fff;
+  .section-navigation__list {
+    display: inline-block;
+    position: relative;
+    line-height: 0;
+    padding: 0;
+    margin-left: 11.8125rem;
+
+    &::before {
+      position: absolute;
+      content: "";
+      background-image: url(../../assets/Line.svg);
+      height: 650px;
+      margin-top: 80px;
+      margin-left: 0.35rem;
+      width: 6px;
     }
   }
 
-  &__section {
-    border: 2px solid #333;
-    padding: 2rem;
-    font-size: 1.2rem;
+  .section-navigation__item {
+    position: relative;
+    background-color: #cfd0c5;
+    height: 18px;
+    width: 18px;
+    list-style: none;
+    display: block;
+    line-height: 0;
+    padding: 0;
+    margin: 65px 0;
+    border-radius: 25px;
+    cursor: pointer;
 
-    &:not(.is-active) {
-      display: none;
+    &::after {
+      position: absolute;
+      content: "";
+      background-color: var(--navy-blue-color);
+      height: inherit;
+      width: inherit;
+      left: 0;
+      border-radius: inherit;
+      transform: scale(0);
     }
+  }
+
+  .section-navigation__heading {
+    position: absolute;
+
+    font-family: var(--font-piazzolla);
+    font-size: 1rem;
+    line-height: 1.3125rem;
+    color: var(--navy-blue-color);
+    text-shadow: -1px 1px 0 #fff, 1px 1px 0 #fff, 1px -1px 0 #fff,
+      -1px -1px 0 #fff;
+
+    padding-left: 40px;
+    opacity: 0;
+    margin: 0;
+    z-index: -1;
+
+    &::before {
+      position: relative;
+      display: block;
+      left: -65px;
+      top: 5px;
+      float: none;
+      content: "";
+      background-image: url(../../assets/DotAndLine.svg);
+      background-repeat: no-repeat;
+      height: 48px;
+      width: 220px;
+    }
+
+    &.is-active {
+      &::before {
+        position: relative;
+        display: block;
+        left: -65px;
+        top: 5px;
+        float: none;
+        content: "";
+        background-image: url(../../assets/DotAndLine.svg);
+        background-repeat: no-repeat;
+        height: 48px;
+        width: 220px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+// Hover
+.section-navigation li:hover {
+  h2 {
+    width: 227px;
+    opacity: 1;
+    left: 30px;
+
+    p {
+      position: absolute;
+      top: 5%;
+    }
+  }
+
+  &::after {
+    transform: scale(1);
   }
 }
