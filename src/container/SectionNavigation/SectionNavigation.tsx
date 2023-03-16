@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import "./SectionNavigation.scss";
 
 type SectionNavigationProps = {
@@ -15,6 +15,23 @@ export function SectionNavigation({
   showButtons,
 }: SectionNavigationProps) {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
+
+  useLayoutEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 1400) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleButtonClick = (index: number) => {
     setCurrentSectionIndex(index);
@@ -25,19 +42,19 @@ export function SectionNavigation({
   };
 
   return (
-    <nav className="section-navigation">
+    <nav className={`section-navigation ${scrolled ? "show" : ""}`}>
       {showButtons && (
         <ul className="section-navigation__list">
           {sections.map((section, index) => (
             <li key={section.id} className="section-navigation__item">
-              <button
-                className={`section-navigation__button ${
+              <h2
+                className={`section-navigation__heading ${
                   index === currentSectionIndex ? "is-active" : ""
                 }`}
                 onClick={() => handleButtonClick(index)}
               >
-                {section.label}
-              </button>
+                <p>{section.label}</p>
+              </h2>
             </li>
           ))}
         </ul>

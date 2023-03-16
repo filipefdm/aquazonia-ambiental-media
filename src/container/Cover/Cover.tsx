@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-
-import "./Header.scss";
+import "./Cover.scss";
 
 import river1 from "../../assets/river1.svg";
 import river2 from "../../assets/river2.svg";
@@ -10,7 +9,7 @@ import vectorCutOut from "../../assets/vector-cut-out.png";
 
 type BackgroundColorProps = "emerald" | "beige";
 
-export function Header() {
+export function Cover() {
   const [bgColor, setBgColor] = useState<BackgroundColorProps>("emerald");
 
   useEffect(() => {
@@ -74,7 +73,7 @@ export function Header() {
         </p>
       </div>
       <div className="cutout">
-        <img src={vectorCutOut} alt="negative space decorative image" />
+        <img src={vectorCutOut} alt="Cut out image" />
       </div>
     </section>
   );

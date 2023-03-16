@@ -1,44 +1,44 @@
-section {
-  .text-inside {
-    width: 65%;
-    padding-left: 15%;
-    margin: 40px auto 80px auto;
-    font-size: 18px;
-    line-height: 30px;
+.section__text-inside {
+  width: 60%;
+  padding-left: 15%;
+  margin: 40px auto 80px auto;
+  font-size: 18px;
+  line-height: 30px;
 
-    font-family: var(--font-ibm-plex-sans);
-    font-weight: 400;
-    line-height: 2rem;
+  font-family: var(--font-ibm-plex-sans);
+  font-weight: 400;
+  line-height: 2rem;
 
-    @media (max-width: 840px) {
-      width: 85%;
-      padding: 0;
-      margin: 80px auto;
-      font-size: 17px;
-      line-height: 27px;
-    }
+  @media (max-width: 840px) {
+    width: 85%;
+    padding: 0;
+    margin: 80px auto;
+    font-size: 17px;
+    line-height: 27px;
+  }
 
-    .app__paragraph::first-letter {
-      float: left;
-      font-family: "Piazzolla";
-      font-size: 6.25rem;
-      padding-right: 0.875rem;
-      color: #0a4262;
-      padding-bottom: 40px;
-    }
+  .section__paragraph::first-letter {
+    float: left;
+    font-family: "Piazzolla";
+    font-size: 6.25rem;
+    padding-right: 0.875rem;
+    color: #0a4262;
+
+    padding-bottom: 1.5rem;
+    padding-top: 1rem;
   }
 }
 
-.section-number-two {
+.section__number-two {
   padding-left: 22%;
   margin-bottom: 80px;
 
-  .leading-text {
+  .section__leading-text {
     flex-basis: 100%;
-    font-family: var(--font-piazzolla), serif;
+    font-family: var(--font-piazzolla);
+    font-weight: bold;
     font-size: 32px;
     line-height: 40px;
-    font-weight: lighter;
     color: #0a4262;
 
     @media (max-width: 1320px) {
@@ -87,7 +87,7 @@ section {
     }
   }
 
-  .overall-numbers-section {
+  .section__overall-numbers {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -97,7 +97,7 @@ section {
       display: block;
     }
 
-    .numbers-subsection {
+    .overall-numbers__numbers-subsection {
       display: inline-flex;
       min-height: 300px;
       flex-direction: column;
@@ -119,6 +119,8 @@ section {
         }
 
         @media (max-width: 950px) {
+          margin-top: 60px;
+          width: 287px;
           font-size: 4rem;
         }
       }
@@ -144,12 +146,11 @@ section {
   }
 }
 
-.fullsize-img {
+.section__fullsize-img {
   max-height: 100vh;
   overflow: hidden;
 
-  .img-crop {
-    max-height: 85vh;
+  .fullsize-img__img-crop {
     overflow: hidden;
     margin-bottom: 10px;
 
@@ -157,6 +158,33 @@ section {
       width: 100%;
       padding: 0;
       margin: 0;
+    }
+  }
+}
+
+.section__number-three {
+  .section__leading-text {
+    width: 70%;
+    margin-bottom: 30px;
+
+    font-family: var(--font-piazzolla);
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 64px;
+    color: #0a4262;
+
+    @media (max-width: 1320px) {
+      width: 90%;
+      font-size: 24px;
+    }
+
+    @media (max-width: 1160px) {
+      margin-top: -40px;
+      padding-bottom: 60px;
+    }
+
+    @media (max-width: 950px) {
+      padding-bottom: 10px;
     }
   }
 }
