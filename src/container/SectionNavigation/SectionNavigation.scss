@@ -131,6 +131,10 @@
     }
   }
 
+  @media (min-width: 840px) {
+    left: -150px;
+  }
+
   @media (max-width: 768px) {
     display: none;
   }
