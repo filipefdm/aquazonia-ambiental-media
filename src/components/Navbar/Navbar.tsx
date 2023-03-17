@@ -22,7 +22,7 @@ export function Navbar() {
         <a href="#" className="links">
           Metodologia
         </a>
-        <div className="mobile-menu">
+        <div className="mobile-menu" data-testid="mobile-menu">
           <span className="line-contain"></span>
           <div className="language-switcher">
             <ul>
@@ -50,11 +50,19 @@ export function Navbar() {
           </button>
         </div>
 
-        <button className="nav-btn nav-close-btn" onClick={showNavBar}>
+        <button
+          className="nav-btn nav-close-btn"
+          onClick={showNavBar}
+          data-testid="close-button"
+        >
           <FaTimes />
         </button>
       </nav>
-      <button className="nav-btn" onClick={showNavBar}>
+      <button
+        className="nav-btn"
+        onClick={showNavBar}
+        data-testid="menu-button"
+      >
         <FaBars />
       </button>
     </header>
