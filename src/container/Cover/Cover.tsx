@@ -41,12 +41,16 @@ export function Cover() {
         <h2 className="subtitle">A FLORESTA-ÁGUA</h2>
         <div className="byline">
           <p className="ownline">
-            <strong>Texto:</strong>
+            <strong>Texto: </strong>
             Ronaldo Ribeiro, Letícia Klein & Kevin Damasio
           </p>
           <p className="inline">
-            <strong>Mapas:</strong>
+            <strong>Mapas: </strong>
             Laura Kurtzberg
+            <p>
+              <strong>Fotos: </strong>
+              João Silva
+            </p>
           </p>
         </div>
         <ul className="langswitcher">
