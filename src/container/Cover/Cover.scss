@@ -195,6 +195,20 @@
       }
     }
 
+    .inline {
+      p {
+        margin-left: 7rem;
+      }
+
+      @media (max-width: 768px) {
+        display: flex;
+
+        p {
+          align-items: center;
+        }
+      }
+    }
+
     @media (max-width: 840px) {
       font-size: 18px;
       line-height: 24px;
@@ -203,7 +217,7 @@
 
   .langswitcher {
     position: relative;
-    top: 0;
+    top: 3.75rem;
     margin-left: 0 !important;
     display: block;
     z-index: 10000;
@@ -217,7 +231,7 @@
 
     .active {
       font-weight: 700;
-      text-decoration: underline;
+      text-decoration: none;
       background-color: #d4edbc;
       padding: 4px 6px;
     }
