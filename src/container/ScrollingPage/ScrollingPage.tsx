@@ -1,30 +1,60 @@
-import { useRef } from "react";
-import { SectionNavigation } from "../SectionNavigation/SectionNavigation";
-import "./ScrollingPage.scss";
+import { useRef } from 'react';
+import { SectionNavigation } from '../SectionNavigation/SectionNavigation';
+import './ScrollingPage.scss';
 
-import hutPicture from "../../assets/hut_picture.png";
+import hutPicture from '../../assets/hut_picture.png';
 
 export function ScrollingPage() {
   const section1Ref = useRef<HTMLDivElement>(null);
   const section2Ref = useRef<HTMLDivElement>(null);
+  const section3Ref = useRef<HTMLDivElement>(null);
+  const section4Ref = useRef<HTMLDivElement>(null);
+  const section5Ref = useRef<HTMLDivElement>(null);
+  const section6Ref = useRef<HTMLDivElement>(null);
+  const section7Ref = useRef<HTMLDivElement>(null);
 
   const sections = [
     {
-      id: "section1",
-      label: "",
+      id: 'section1',
+      label: 'A intensidade das ameaças à bacia',
       ref: section1Ref,
     },
     {
-      id: "section2",
-      label: "A intensidade das ameaças à bacia",
+      id: 'section2',
+      label: '',
       ref: section2Ref,
+    },
+    {
+      id: 'section3',
+      label: '',
+      ref: section3Ref,
+    },
+    {
+      id: 'section4',
+      label: '',
+      ref: section4Ref,
+    },
+    {
+      id: 'section5',
+      label: '',
+      ref: section5Ref,
+    },
+    {
+      id: 'section6',
+      label: '',
+      ref: section6Ref,
+    },
+    {
+      id: 'section7',
+      label: '',
+      ref: section7Ref,
     },
   ];
 
   return (
     <>
       <SectionNavigation sections={sections} showButtons={true} />
-      <div ref={section1Ref} className="section__text-inside">
+      <div className="section__text-inside">
         <p className="section__paragraph">
           A Amazônia perdeu 12% da sua superfície de água - um total de
           1.104.575 ha, com quebra de linha. equivalente à metade do território
@@ -101,7 +131,7 @@ export function ScrollingPage() {
           <img src={hutPicture} alt="Hut picture" />
         </div>
       </div>
-      <div ref={section2Ref} className="section__text-inside">
+      <div ref={section1Ref} className="section__text-inside">
         <section className="section__number-three">
           <div className="section__leading-text">
             <h2>A intensidade das ameaças à bacia</h2>

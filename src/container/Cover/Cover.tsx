@@ -1,28 +1,28 @@
-import { useState, useEffect } from "react";
-import "./Cover.scss";
+import { useState, useEffect } from 'react';
+import './Cover.scss';
 
-import river1 from "../../assets/river1.svg";
-import river2 from "../../assets/river2.svg";
-import ambientalMediaLogo from "../../assets/logo_ambiental_media.png";
-import serrapilheiraLogo from "../../assets/logo_serrapilheira.png";
-import vectorCutOut from "../../assets/vector-cut-out.png";
+import river1 from '../../assets/river1.svg';
+import river2 from '../../assets/river2.svg';
+import ambientalMediaLogo from '../../assets/logo_ambiental_media.png';
+import serrapilheiraLogo from '../../assets/logo_serrapilheira.png';
+import vectorCutOut from '../../assets/vector-cut-out.png';
 
-type BackgroundColorProps = "emerald" | "beige";
+type BackgroundColorProps = 'emerald' | 'beige';
 
 export function Cover() {
-  const [bgColor, setBgColor] = useState<BackgroundColorProps>("emerald");
+  const [bgColor, setBgColor] = useState<BackgroundColorProps>('emerald');
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.pageYOffset > 0 && bgColor !== "beige") {
-        setBgColor("beige");
-      } else if (window.pageYOffset === 0 && bgColor !== "emerald") {
-        setBgColor("emerald");
+      if (window.pageYOffset > 0 && bgColor !== 'beige') {
+        setBgColor('beige');
+      } else if (window.pageYOffset === 0 && bgColor !== 'emerald') {
+        setBgColor('emerald');
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [bgColor]);
 
   return (
@@ -47,10 +47,8 @@ export function Cover() {
           <p className="inline">
             <strong>Mapas: </strong>
             Laura Kurtzberg
-            <p>
-              <strong>Fotos: </strong>
-              João Silva
-            </p>
+            <strong>Fotos: </strong>
+            João Silva
           </p>
         </div>
         <ul className="langswitcher">
