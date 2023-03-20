@@ -7,6 +7,7 @@
   left: 0;
   background-color: var(--navy-blue-color);
   z-index: 999;
+  overflow-y: scroll;
 
   span {
     float: left;
@@ -17,7 +18,12 @@
     padding: 0;
     display: inline;
     background-color: #83d1bf;
-    height: 100%;
+    height: 153%;
+
+    @media (max-width: 280px) {
+      margin-left: 10px;
+      margin-right: 20px;
+    }
   }
 
   .menu-items {
@@ -38,7 +44,7 @@
     }
 
     @media (max-width: 768px) {
-      width: 40%;
+      width: 60%;
 
       a {
         font-size: 1.25rem;
@@ -64,22 +70,25 @@
     @media (max-width: 390px) {
       width: 70%;
     }
+
+    @media (max-width: 280px) {
+      margin-bottom: 20px;
+    }
   }
 
   .other-histories-button {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
     background-color: var(--emerald-green-color);
-    width: 13.625rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     padding: 20px 30px 20px 30px;
 
     p {
+      display: flex;
+      width: 180px;
+      gap: 1.25rem;
+      justify-content: space-between;
+      align-items: center;
       font-family: var(--font-ibm-plex-sans);
       font-weight: 400;
       font-size: 17px;
@@ -87,6 +96,20 @@
       margin: 0 auto;
     }
   }
+}
+
+.mobile-menu::-webkit-scrollbar {
+  width: 8px;
+  background-color: #f1f1f1;
+}
+
+.mobile-menu::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+.mobile-menu::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
 }
 
 @media screen and (max-width: 768px) {

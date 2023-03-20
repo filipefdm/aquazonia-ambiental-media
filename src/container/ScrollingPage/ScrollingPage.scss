@@ -132,6 +132,7 @@
 
         @media (max-width: 1320px) {
           font-size: 1.375rem;
+          width: 10.5rem;
         }
 
         @media (max-width: 950px) {
@@ -162,14 +163,15 @@
 
 .section__number-three {
   .section__leading-text {
-    width: 70%;
-    margin-bottom: 30px;
-
-    font-family: var(--font-piazzolla);
-    font-size: 32px;
-    font-weight: normal;
-    line-height: 64px;
-    color: #0a4262;
+    h2 {
+      font-family: var(--font-piazzolla);
+      color: #0a4262;
+      max-width: 620px;
+      font-size: 55px;
+      line-height: 60px;
+      font-weight: 300;
+      margin-bottom: 60px;
+    }
 
     @media (max-width: 1320px) {
       width: 90%;
@@ -183,6 +185,12 @@
 
     @media (max-width: 950px) {
       padding-bottom: 10px;
+    }
+
+    @media (max-width: 390px) {
+      h2 {
+        font-size: 2.25rem;
+      }
     }
   }
 }

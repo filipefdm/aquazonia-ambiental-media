@@ -1,5 +1,5 @@
-import React, { useState, useLayoutEffect } from "react";
-import "./SectionNavigation.scss";
+import React, { useState, useLayoutEffect } from 'react';
+import './SectionNavigation.scss';
 
 type SectionNavigationProps = {
   sections: {
@@ -26,30 +26,30 @@ export function SectionNavigation({
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   const handleButtonClick = (index: number) => {
     setCurrentSectionIndex(index);
     sections[index].ref.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
+      behavior: 'smooth',
+      block: 'start',
     });
   };
 
   return (
-    <nav className={`section-navigation ${scrolled ? "show" : ""}`}>
+    <nav className={`section-navigation ${scrolled ? 'show' : ''}`}>
       {showButtons && (
         <ul className="section-navigation__list">
           {sections.map((section, index) => (
             <li key={section.id} className="section-navigation__item">
               <h2
                 className={`section-navigation__heading ${
-                  index === currentSectionIndex ? "is-active" : ""
+                  index === currentSectionIndex ? 'is-active' : ''
                 }`}
                 onClick={() => handleButtonClick(index)}
               >
