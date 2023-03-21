@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import arrowRight from '../../assets/vector-28.svg';
+import arrowRight from '../../assets/blue-arrow-right.png';
 
 import './Navbar.scss';
 import './MenuMobile.scss';
