@@ -14,8 +14,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src", "__mocks__", "jest.config.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "ignorePatterns": ["jest.config.ts"],
 }
