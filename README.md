@@ -14,7 +14,7 @@
 
 # Temas
 
-- [O que é o Aquazônia?](#o-que-é-o-Aquazônia?)
+- [O que é o Aquazônia?](#o-que-é-o-aquazônia)
 - [Tecnologias](#tecnologias)
 - [Como executar?](#como-executar)
 
