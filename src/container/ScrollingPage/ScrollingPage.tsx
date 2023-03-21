@@ -21,32 +21,32 @@ export function ScrollingPage() {
     },
     {
       id: 'section2',
-      label: '',
+      label: 'Lacunas de dados num mundo de águas',
       ref: section2Ref,
     },
     {
       id: 'section3',
-      label: '',
+      label: 'Lacunas de dados num mundo de águas',
       ref: section3Ref,
     },
     {
       id: 'section4',
-      label: '',
+      label: 'Água: fonte de energia de baixo impacto?',
       ref: section4Ref,
     },
     {
       id: 'section5',
-      label: '',
+      label: 'Ouro: o sonho amazônico virou pesadelo ambiental',
       ref: section5Ref,
     },
     {
       id: 'section6',
-      label: '',
+      label: 'Ouro: o sonho amazônico virou pesadelo ambiental',
       ref: section6Ref,
     },
     {
       id: 'section7',
-      label: '',
+      label: 'O futuro: um esforço coordenado pela bacia',
       ref: section7Ref,
     },
   ];
@@ -108,7 +108,7 @@ export function ScrollingPage() {
         </p>
       </div>
       <section className="section__number-two">
-        <div className="section__leading-text">
+        <div className="section__leading-text" role="region">
           <p>A Bacia Hidrográfica Amazônica representa: </p>
         </div>
         <div className="section__overall-numbers">
@@ -128,7 +128,7 @@ export function ScrollingPage() {
       </section>
       <div className="section__fullsize-img">
         <div className="fullsize-img__img-crop">
-          <img src={hutPicture} alt="Hut picture" />
+          <img src={hutPicture} alt="Hut picture" role="img" />
         </div>
       </div>
       <div ref={section1Ref} className="section__text-inside">
