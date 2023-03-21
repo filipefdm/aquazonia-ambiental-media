@@ -6,6 +6,7 @@ import river2 from '../../assets/river2.svg';
 import ambientalMediaLogo from '../../assets/logo_ambiental_media.png';
 import serrapilheiraLogo from '../../assets/logo_serrapilheira.png';
 import vectorCutOut from '../../assets/vector-cut-out.png';
+import { act } from '@testing-library/react';
 
 type BackgroundColorProps = 'emerald' | 'beige';
 
@@ -15,9 +16,13 @@ export function Cover() {
   useEffect(() => {
     const handleScroll = () => {
       if (window.pageYOffset > 0 && bgColor !== 'beige') {
-        setBgColor('beige');
+        act(() => {
+          setBgColor('beige');
+        });
       } else if (window.pageYOffset === 0 && bgColor !== 'emerald') {
-        setBgColor('emerald');
+        act(() => {
+          setBgColor('emerald');
+        });
       }
     };
 
@@ -26,7 +31,7 @@ export function Cover() {
   }, [bgColor]);
 
   return (
-    <section className={`app__header ${bgColor}`}>
+    <section className={`app__header ${bgColor}`} role="section">
       <div className="app__fullsize-img"></div>
       <div className="titletext">
         <div className="background-img">
