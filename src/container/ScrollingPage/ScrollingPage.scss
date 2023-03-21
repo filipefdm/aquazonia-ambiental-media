@@ -50,10 +50,6 @@
       padding-bottom: 60px;
     }
 
-    @media (max-width: 950px) {
-      // padding-bottom: 10px;
-    }
-
     &::after {
       position: absolute;
       content: "";
@@ -114,12 +110,6 @@
 
         @media (max-width: 1320px) {
           font-size: 3.4375rem;
-        }
-
-        @media (max-width: 950px) {
-          // margin-top: 60px;
-          // width: 287px;
-          // font-size: 4rem;
         }
       }
 
