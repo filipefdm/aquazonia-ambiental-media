@@ -1,8 +1,3 @@
-/*
- * For a detailed explanation regarding each configuration property and type check, visit:
- * https://jestjs.io/docs/configuration
- */
-
 export default {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -14,7 +9,7 @@ export default {
   // cacheDirectory: "C:\\Users\\013190664\\AppData\\Local\\Temp\\jest",
 
   // Automatically clear mock calls, instances, contexts and results before every test
-  clearMocks: true,
+  clearMocks: false,
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
@@ -88,7 +83,10 @@ export default {
   // ],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-  // moduleNameMapper: {},
+  moduleNameMapper: {
+    "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/__mocks__/fileMock.js",
+    "\\.(css|less|sass|scss)$": "identity-obj-proxy",
+  },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
@@ -153,10 +151,7 @@ export default {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  // testMatch: [
-  //   "**/__tests__/**/*.[jt]s?(x)",
-  //   "**/?(*.)+(spec|test).[tj]s?(x)"
-  // ],
+  testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[tj]s?(x)"],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
@@ -174,30 +169,32 @@ export default {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    "^.+\\.(t|j)sx?$": [
-      "@swc/jest",
-      {
-        jsc: {
-          parser: {
-            syntax: "typescript",
-            tsx: true,
-            decorators: true,
-          },
-          keepClassNames: true,
-          transform: {
-            legacyDecorator: true,
-            decoratorMetadata: true,
-            react: {
-              runtime: "automatic",
-            },
-          },
-        },
-        module: {
-          type: "es6",
-          noInterop: false,
-        },
-      },
-    ],
+    "^.+\\.tsx?$": "ts-jest",
+    // [
+    //   "@swc/jest",
+    //   {
+    //     jsc: {
+    //       parser: {
+    //         syntax: "typescript",
+    //         tsx: true,
+    //         decorators: true,
+    //       },
+    //       keepClassNames: true,
+    //       transform: {
+    //         legacyDecorator: true,
+    //         decoratorMetadata: true,
+    //         react: {
+    //           runtime: "automatic",
+    //         },
+    //       },
+    //     },
+    //     module: {
+    //       type: "es6",
+    //       noInterop: false,
+    //     },
+    //   },
+    // ],
+
     "^.+\\.scss$": [
       "jest-transform-stub",
       {
