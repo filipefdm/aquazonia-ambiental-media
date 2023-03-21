@@ -6,6 +6,7 @@ import river2 from '../../assets/river2.svg';
 import ambientalMediaLogo from '../../assets/logo_ambiental_media.png';
 import serrapilheiraLogo from '../../assets/logo_serrapilheira.png';
 import vectorCutOut from '../../assets/vector-cut-out.png';
+import { act } from 'react-dom/test-utils';
 
 type BackgroundColorProps = 'emerald' | 'beige';
 
@@ -15,9 +16,13 @@ export function Cover() {
   useEffect(() => {
     const handleScroll = () => {
       if (window.pageYOffset > 0 && bgColor !== 'beige') {
-        setBgColor('beige');
+        act(() => {
+          setBgColor('beige');
+        });
       } else if (window.pageYOffset === 0 && bgColor !== 'emerald') {
-        setBgColor('emerald');
+        act(() => {
+          setBgColor('emerald');
+        });
       }
     };
 
